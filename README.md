@@ -21,6 +21,11 @@ Checkout the repository contents into `$HOME`:
 config checkout
 ```
 
+Initialize and clone submodules:
+```sh
+git submodule update --init --recursive
+```
+
 Set the `showUntrackedFiles` to `no`:
 ```sh
 config config --local status.showUntrackedFiles no
