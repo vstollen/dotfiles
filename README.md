@@ -30,3 +30,8 @@ Set the `showUntrackedFiles` to `no`:
 ```sh
 config config --local status.showUntrackedFiles no
 ```
+
+### Run the init script
+```sh
+~/.util/dotfiles_init.fish
+```
