@@ -57,3 +57,10 @@
 (setq org-roam-encrypt-files t)
 
 (setq doom-font (font-spec :family "JetBrains Mono" :size 16))
+
+(use-package! org-roam-bibtex
+  :after org-roam
+  :config
+  (require 'org-ref))
+
+(add-to-list 'auto-mode-alist '("\\.liquid'" . web-mode))
