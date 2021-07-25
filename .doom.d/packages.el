@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! org-roam-bibtex)
+(package! org-noter)
