@@ -58,6 +58,11 @@
 
 (setq doom-font (font-spec :family "JetBrains Mono" :size 16))
 
+(use-package! web-mode
+  :custom
+  (web-mode-markup-indent-offset 2)
+  (web-mode-css-indent-offset 2)
+  (web-mode-code-indent-offset 2))
 (add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
 
 (use-package! org-ref
@@ -146,3 +151,10 @@
                  :prepend t
                  :kill-buffer t))
 )
+
+;; Use multiple language disctionaries
+(after! ispell
+  (setq ispell-program-name "hunspell")
+  (setq ispell-dictionary "de_DE,en_US")
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "de_DE,en_US"))
