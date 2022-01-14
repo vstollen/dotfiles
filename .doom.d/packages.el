@@ -51,3 +51,8 @@
 
 (package! org-roam-bibtex)
 (package! org-noter)
+
+(unpin! org-roam)
+(package! org-roam-ui)
+
+(package! org-ref)

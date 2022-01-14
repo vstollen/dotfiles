@@ -53,8 +53,20 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; org-roam
 (setq org-roam-directory "~/Dokumente/Notes/org-roam")
-(setq org-roam-encrypt-files t)
+
+;; org-roam-ui configs
+(use-package! websocket
+  :after org-roam)
+
+(use-package! org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
 
 (setq doom-font (font-spec :family "JetBrains Mono" :size 16))
 
