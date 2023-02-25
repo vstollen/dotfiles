@@ -4,7 +4,7 @@ My dotfiles. Managed as described in this guide: https://www.atlassian.com/git/t
 ## Installation
 Set the `config` alias in the `.bashrc` or fish shell:
 ```sh
-# Bash
+# Bash or Zsh
 echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 
 # Fish
@@ -35,3 +35,6 @@ config config --local status.showUntrackedFiles no
 ```sh
 ~/.util/dotfiles_init.fish
 ```
+
+### (Optional)
+Install [Starship Prompt](https://starship.rs/).
