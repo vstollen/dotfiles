@@ -32,6 +32,12 @@ return require('packer').startup(function(use)
 		config = "require('plugins.treesitter')"
 	}
 
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { {'nvim-lua/plenary.nvim'} },
+		config = "require('plugins.telescope')"
+	}
+
 	use { 'neovim/nvim-lspconfig', config = "require('plugins.lspconfig')" }
 
 	if packer_bootstrap then

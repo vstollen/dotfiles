@@ -1,6 +1,6 @@
 -- Options
 vim.o.termguicolors = true
-vim.o.undodir = vim.fn.stdpath('config') .. '/undodir'
+vim.o.undodir = vim.fn.stdpath('data') .. '/undodir'
 vim.o.undofile = true
 
 vim.o.tabstop = 2
