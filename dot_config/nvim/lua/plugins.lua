@@ -38,7 +38,63 @@ return require('packer').startup(function(use)
 		config = "require('plugins.telescope')"
 	}
 
-	use { 'neovim/nvim-lspconfig', config = "require('plugins.lspconfig')" }
+	use {
+		'nvim-telescope/telescope-bibtex.nvim',
+		requires = {
+			{'nvim-telescope/telescope.nvim'},
+		},
+		config = function ()
+		  require('telescope').load_extension('bibtex')
+		end,
+	}
+
+	use {
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v3.x',
+		requires = {
+			--- Uncomment the two plugins below if you want to manage the language servers from neovim
+			{'williamboman/mason.nvim'},
+			{'williamboman/mason-lspconfig.nvim'},
+
+			-- LSP Support
+			{'neovim/nvim-lspconfig'},
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},
+			{'hrsh7th/cmp-nvim-lsp'},
+			{'L3MON4D3/LuaSnip'},
+		},
+		config = "require('plugins.lsp')"
+	}
+
+	use {
+		'stevearc/conform.nvim',
+		config = "require('plugins.conform')"
+	}
+
+	use {
+		'mbbill/undotree'
+	}
+
+	use("christoomey/vim-tmux-navigator")
+	use {
+		"github/copilot.vim",
+		config = "require('plugins.copilot')"
+	}
+
+	use {
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = "require('plugins.nvim-tree')"
+	}
+
+	use {
+		"lervag/vimtex",
+		setup = "require('plugins.vimtex.setup')",
+	}
+
+	use("barreiroleo/ltex-extra.nvim")
 
 	if packer_bootstrap then
 		require('packer').sync()
