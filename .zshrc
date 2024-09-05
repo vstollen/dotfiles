@@ -21,6 +21,13 @@ source <(fzf --zsh)
 # Config Management
 alias vim='nvim'
 
+# Dotfile Management
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# Faster git completion (from the official git repo)
+# https://git.kernel.org/pub/scm/git/git.git/plain/contrib/completion/git-completion.zsh
+fpath=(~/.zsh $fpath)
+
 # Tab completion for aliases
 unsetopt completealiases
 

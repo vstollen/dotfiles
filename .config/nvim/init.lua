@@ -35,4 +35,4 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Plugin
-require('plugins')
+require('config.lazy')

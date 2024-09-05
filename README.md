@@ -1,18 +1,40 @@
 # Dotfiles
-My dotfiles. Managed using [Chezmoi](https://www.chezmoi.io/).
+My dotfiles. Managed as described in this guide: https://www.atlassian.com/git/tutorials/dotfiles
 
-## Contents
-Currently, I only have my:
-- Neovim config
-- ZSH config
-
-I might add more configs in the future.
-
-## Git hooks (pre-commit secret checking)
-To enable the git hooks, run the following command:
+## Installation
+Set the `config` alias in the `.bashrc` or fish shell:
 ```sh
-git config --local core.hooksPath .githooks/
+# Bash or Zsh
+echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
+
+# Fish
+alias -s config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 
-## Questions
-If you have any questions about my setup, don't hesitate to ask! I'll be happy to help you.
+Clone the dotfiles into a bare repository:
+```sh
+git clone --bare git@github.com:vstollen/dotfiles.git $HOME/.dotfiles
+```
+
+Checkout the repository contents into `$HOME`:
+```sh
+config checkout
+```
+
+Initialize and clone submodules:
+```sh
+git submodule update --init --recursive
+```
+
+Set the `showUntrackedFiles` to `no`:
+```sh
+config config --local status.showUntrackedFiles no
+```
+
+### Run the init script
+```sh
+~/.util/dotfiles_init.fish
+```
+
+### (Optional)
+Install [Starship Prompt](https://starship.rs/).
