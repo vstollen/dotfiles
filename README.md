@@ -31,10 +31,5 @@ Set the `showUntrackedFiles` to `no`:
 config config --local status.showUntrackedFiles no
 ```
 
-### Run the init script
-```sh
-~/.util/dotfiles_init.fish
-```
-
 ### (Optional)
 Install [Starship Prompt](https://starship.rs/).
