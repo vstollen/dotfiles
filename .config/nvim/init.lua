@@ -34,5 +34,7 @@ vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+
 -- Plugin
 require('config.lazy')
