@@ -3,4 +3,5 @@ if status is-interactive
 		starship init fish | source
 		fzf --fish | source
 		zoxide init fish | source
+    jj util completion fish | source
 end
