@@ -36,6 +36,11 @@ local function setupMason()
             require("ltex_extra").setup()
           end,
         })
+      end,
+      clangd = function()
+        require("lspconfig").clangd.setup({
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
+        })
       end
     },
   })
