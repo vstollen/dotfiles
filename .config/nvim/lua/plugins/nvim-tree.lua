@@ -12,6 +12,9 @@ return {
       update_focused_file = {
         enable = true,
       },
+      filters = {
+        git_ignored = false
+      }
     })
 
     -- Opens nvim tree if the file is a real file on the disk or a [No Name] Buffer
