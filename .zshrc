@@ -34,4 +34,4 @@ unsetopt completealiases
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-[ -f "/Users/vincentstollenwerk/.ghcup/env" ] && . "/Users/vincentstollenwerk/.ghcup/env" # ghcup-env
+[ -f "/Users/`whoami`/.ghcup/env" ] && . "/Users/`whoami`/.ghcup/env" # ghcup-env
