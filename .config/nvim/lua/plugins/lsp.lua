@@ -3,17 +3,32 @@ local function setupMason()
   require("mason-lspconfig").setup({
     -- Replace the language servers listed here
     -- with the ones you want to install
-    ensure_installed = {"lua_ls", "eslint", "ts_ls", "rust_analyzer"},
+    ensure_installed = { "lua_ls", "eslint", "ts_ls", "rust_analyzer" },
     handlers = {
       function(server_name)
         require("lspconfig")[server_name].setup({})
+      end,
+      gopls = function()
+        require("lspconfig").gopls.setup({
+          on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              buffer = bufnr,
+              callback = function()
+                vim.lsp.buf.format {
+                  async = false,
+                  id = client.id
+                }
+              end
+            })
+          end
+        })
       end,
       lua_ls = function()
         require("lspconfig").lua_ls.setup({
           settings = {
             Lua = {
               diagnostics = {
-                globals = {"vim"}
+                globals = { "vim" }
               },
             },
           },
@@ -79,7 +94,7 @@ return {
       -- lsp_attach is where you enable features that only work
       -- if there is a language server active in the file
       local lsp_attach = function(client, bufnr)
-        lsp_zero.default_keymaps({buffer = bufnr})
+        lsp_zero.default_keymaps({ buffer = bufnr })
       end
 
       lsp_zero.extend_lspconfig({
@@ -93,4 +108,3 @@ return {
     end
   }
 }
-
