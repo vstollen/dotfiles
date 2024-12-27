@@ -1,6 +1,8 @@
 return {
-  "mbbill/undotree",
-  "barreiroleo/ltex-extra.nvim",
-  "RRethy/vim-illuminate",
-  "lewis6991/gitsigns.nvim",
+	"tpope/vim-sleuth",
+	"RRethy/vim-illuminate",
+	"barreiroleo/ltex-extra.nvim",
+	"github/copilot.vim",
+	"lewis6991/gitsigns.nvim",
+	"mbbill/undotree",
 }
