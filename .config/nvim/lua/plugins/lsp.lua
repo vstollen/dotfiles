@@ -54,7 +54,12 @@ local function setupMason()
       end,
       clangd = function()
         require("lspconfig").clangd.setup({
-          filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+          on_attach = function(client, bufnr)
+            vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cf", "<cmd>ClangdSwitchSourceHeader<CR>", {
+              noremap = true,
+            })
+          end,
         })
       end
     },
